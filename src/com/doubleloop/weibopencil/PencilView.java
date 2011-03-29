@@ -17,8 +17,8 @@ public class PencilView extends View {
 	private float pencilX;
 	private float pencilY;
 
-	private Paint mPaint;
-	private Paint mPencilPaint;
+	private Paint mPaint; // Ink
+	private Paint mPencilPaint; // Line representing a pencil - Disabled.
 	private Bitmap mBitmap;
 	private Canvas mCanvas;
 	private Canvas mPencilCanvas;
@@ -29,6 +29,13 @@ public class PencilView extends View {
 	private float mPressureThreshold;
 	private float mPressureValue;
 	
+	public Paint getPencilPaint(){
+		return mPaint;
+	}
+	public void setPencilPaintColor(int color){
+		mPaint.setColor(color);
+		mPaint.setAlpha(50);
+	}
 
 	public PencilView(Context context) {
 		super(context);
